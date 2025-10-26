@@ -1,0 +1,22 @@
+services:
+  calificaciones-api:
+    container_name: calificaciones-api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - "./api:/app"
+    ports:
+      - "8000:8000"
+
+  calificaciones-frontend:
+      container_name: calificaciones-frontend
+      build:
+        context: ./frontend
+        dockerfile: Dockerfile
+      volumes:
+        - "./frontend:/app"
+      ports:
+        - "80:5000"
+      depends_on:
+        - calificaciones-api
