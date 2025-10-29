@@ -1,13 +1,13 @@
 services:
   calificaciones-api:
     container_name: calificaciones-api
-    image: ualmtorres/calificaciones-api:0.1
+    image: ualmtorres/calificaciones-api:v0.1
     ports:
       - "8000:8000"
 
   calificaciones-frontend:
       container_name: calificaciones-frontend
-      image: ualmtorres/calificaciones-frontend:0.1
+      image: ualmtorres/calificaciones-frontend:v0.1
       ports:
         - "80:5000"
       depends_on:
